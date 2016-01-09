@@ -30,7 +30,7 @@ public class DriverClass {
         job.setMapperClass(ResourceDistributionMapper.class);
         job.setReducerClass(ResourceDistributionReducer.class);
         //set combiner and partitioner
-        job.setCombinerClass(ResourceDistributionReducer.class);
+        job.setCombinerClass(ResourceDistributionCombiner.class);
         job.setPartitionerClass(ResourcePartitioner.class);
         //Set Input/output format
         job.setInputFormatClass(KeyValueTextInputFormat.class);
