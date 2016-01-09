@@ -11,7 +11,7 @@ public class ResourceDistributionMapper extends Mapper<IntWritable, Text, Text, 
     @Override
     protected void map(IntWritable key, Text value, Context context) throws IOException, InterruptedException {
 
-        String district= value.toString().split(",")[7];
+        String district= value.toString().split(",")[6];
         context.write(new Text(district),new IntWritable(1));
     }
 }
