@@ -35,12 +35,12 @@ public class DriverClass {
         //Set Input/output format
         job.setInputFormatClass(KeyValueTextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
-
+        //set output key value type  
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(Text.class);
+        job.setMapOutputValueClass(IntWritable.class);
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(Text.class);
-
+        job.setOutputValueClass(IntWritable.class);
+        // providing input and output path to job 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         System.exit(job.waitForCompletion(true) ? 0 :  1 );
