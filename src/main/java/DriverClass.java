@@ -27,12 +27,13 @@ public class DriverClass {
         job.setJarByClass(DriverClass.class );
         //set number of reducer
         job.setNumReduceTasks(3);
-        //setting map reduce class
+        //set map  class
         job.setMapperClass(ResourceDistributionMapper.class);
-        job.setReducerClass(ResourceDistributionReducer.class);
         //set combiner and partitioner
         job.setCombinerClass(ResourceDistributionCombiner.class);
         job.setPartitionerClass(ResourcePartitioner.class);
+        //Set reducer
+        job.setReducerClass(ResourceDistributionReducer.class);
         //Set Input/output format
         job.setInputFormatClass(KeyValueTextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
